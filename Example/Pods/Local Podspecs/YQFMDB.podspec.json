@@ -16,16 +16,7 @@
     "tag": "0.0.1"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "11.0"
   },
-  "subspecs": [
-    {
-      "name": "FMDB",
-      "source_files": "YQFMDB/Classes/FMDB/**/*"
-    },
-    {
-      "name": "AVFMDB",
-      "source_files": "YQFMDB/Classes/AVFMDB/**/*"
-    }
-  ]
+  "source_files": "YQFMDB/Classes/**/*"
 }

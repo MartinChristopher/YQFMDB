@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		1713E2FFFB7F4AC5CE4BE125 /* Pods_YQFMDB_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YQFMDB_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2069292BEDB451B5994EE4 /* Pods_YQFMDB_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YQFMDB_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		489E10AC7226007509C11AA9 /* YQFMDB.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YQFMDB.podspec; path = ../YQFMDB.podspec; sourceTree = "<group>"; };
+		489E10AC7226007509C11AA9 /* YQFMDB.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YQFMDB.podspec; path = ../YQFMDB.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		517AD5B46DE4755DA8EBE863 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* YQFMDB_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YQFMDB_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };

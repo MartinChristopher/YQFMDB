@@ -19,16 +19,10 @@ TODO: Add long description of the pod here.
   s.author           = { 'MartinChristopher' => '519483040@qq.com' }
   s.source           = { :git => 'https://github.com/MartinChristopher/YQFMDB.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
-  s.platform              = :ios, "9.0"
+  s.ios.deployment_target = '11.0'
+  s.platform              = :ios, "11.0"
 
-  s.subspec 'FMDB' do |fmdb|
-  fmdb.source_files = 'YQFMDB/Classes/FMDB/**/*'
-  end
-
-  s.subspec 'AVFMDB' do |avfmdb|
-  avfmdb.source_files = 'YQFMDB/Classes/AVFMDB/**/*'
-  end
+  s.source_files = 'YQFMDB/Classes/**/*'
   
   # s.resource_bundles = {
   #   'YQFMDB' => ['YQFMDB/Assets/*.png']
