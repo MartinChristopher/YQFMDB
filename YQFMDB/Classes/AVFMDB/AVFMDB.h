@@ -6,7 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#if __has_include(<YQFMDB/FMDB.h>)
 #import <YQFMDB/FMDB.h>
+#else
+#import "FMDB.h"
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
