@@ -1,0 +1,6 @@
+framework module YQFMDB {
+  umbrella header "YQFMDB-umbrella.h"
+
+  export *
+  module * { export * }
+}
