@@ -1,6 +1,6 @@
 //
-//  AVFMDB.h
-//  AVFMDB
+//  YQFMDB.h
+//  YQFMDB
 //
 //  Created by Apple on 2021/7/23.
 //
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AVFMDB : NSObject
+@interface YQFMDB : NSObject
 
 + (instancetype)shared;
 

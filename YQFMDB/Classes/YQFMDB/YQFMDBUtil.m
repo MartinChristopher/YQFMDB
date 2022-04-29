@@ -1,15 +1,15 @@
 //
-//  AVFMDBUtil.m
-//  AVFMDB
+//  YQFMDBUtil.m
+//  YQFMDB
 //
 //  Created by Apple on 2021/7/23.
 //
 
-#import "AVFMDBUtil.h"
-#import "AVMacros.h"
+#import "YQFMDBUtil.h"
+#import "YQMacros.h"
 #import <objc/runtime.h>
 
-@implementation AVFMDBUtil
+@implementation YQFMDBUtil
 
 + (NSString *)dbPathForName:(NSString *)name {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -26,8 +26,8 @@
         dic = parameters;
     }
     else {
-        Class CLS = [AVFMDBUtil getModelClass:parameters];
-        dic = [AVFMDBUtil modelToDictionary:CLS];
+        Class CLS = [YQFMDBUtil getModelClass:parameters];
+        dic = [YQFMDBUtil modelToDictionary:CLS];
     }
     return dic;
 }
@@ -64,7 +64,7 @@
         //属性类型
         NSString *type = [NSString stringWithCString:property_getAttributes(properties[i]) encoding:NSUTF8StringEncoding];
         //属性的类型换为数据库类型
-        id value = [AVFMDBUtil propertTypeConvert:type];
+        id value = [YQFMDBUtil propertTypeConvert:type];
         if (value) {
             [dic setObject:value forKey:name];
         }

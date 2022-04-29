@@ -10,16 +10,16 @@
 #endif
 #endif
 
-#import "AVFMDB.h"
-#import "AVFMDBHeader.h"
-#import "AVFMDBUtil.h"
-#import "AVMacros.h"
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
 #import "FMDatabasePool.h"
 #import "FMDatabaseQueue.h"
 #import "FMDB.h"
 #import "FMResultSet.h"
+#import "YQFMDB.h"
+#import "YQFMDBHeader.h"
+#import "YQFMDBUtil.h"
+#import "YQMacros.h"
 
 FOUNDATION_EXPORT double YQFMDBVersionNumber;
 FOUNDATION_EXPORT const unsigned char YQFMDBVersionString[];

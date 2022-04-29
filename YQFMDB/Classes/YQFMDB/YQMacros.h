@@ -1,12 +1,12 @@
 //
-//  AVMacros.h
-//  AVFMDB
+//  YQMacros.h
+//  YQFMDB
 //
 //  Created by Apple on 2021/7/23.
 //
 
-#ifndef AVMacros_h
-#define AVMacros_h
+#ifndef YQMacros_h
+#define YQMacros_h
 
 ///数据库中常见的几种类型
 #define SQL_TEXT     @"TEXT"    //文本
@@ -21,6 +21,6 @@
 #define kPrimaryKeyType  @"primaryKeyType"
 
 ///数据库名
-#define kDataBaseName   @"AVFMDB.sqlite"
+#define kDataBaseName   @"YQFMDB.sqlite"
 
-#endif /* AVMacros_h */
+#endif /* YQMacros_h */

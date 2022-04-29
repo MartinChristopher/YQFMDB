@@ -1,13 +1,13 @@
 //
-//  AVFMDBUtil.h
-//  AVFMDB
+//  YQFMDBUtil.h
+//  YQFMDB
 //
 //  Created by Apple on 2021/7/23.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface AVFMDBUtil : NSObject
+@interface YQFMDBUtil : NSObject
 
 + (NSString *)dbPathForName:(NSString *)name;
 

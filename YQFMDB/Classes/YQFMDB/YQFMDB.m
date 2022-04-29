@@ -1,29 +1,29 @@
 //
-//  AVFMDB.m
-//  AVFMDB
+//  YQFMDB.m
+//  YQFMDB
 //
 //  Created by Apple on 2021/7/23.
 //
 
-#import "AVFMDB.h"
-#import "AVFMDBUtil.h"
-#import "AVMacros.h"
+#import "YQFMDB.h"
+#import "YQFMDBUtil.h"
+#import "YQMacros.h"
 
-@interface AVFMDB ()
+@interface YQFMDB ()
 
 @property (nonatomic, strong) NSString *dbPath;
 @property (nonatomic, strong) FMDatabase *db;
 
 @end
 
-@implementation AVFMDB
+@implementation YQFMDB
 
 #pragma mark - <创建数据库>
 
-static AVFMDB *lcdb = nil;
+static YQFMDB *lcdb = nil;
 
 + (instancetype)shared {
-    return [AVFMDB sharedDbName:@""];
+    return [YQFMDB sharedDbName:@""];
 }
 
 + (instancetype)sharedDbName:(NSString *)dbName {
@@ -31,11 +31,11 @@ static AVFMDB *lcdb = nil;
         if (!dbName || dbName.length < 1) {
             dbName = kDataBaseName;
         }
-        NSString *path = [AVFMDBUtil dbPathForName:dbName];
+        NSString *path = [YQFMDBUtil dbPathForName:dbName];
         NSLog(@"%@", path);
         FMDatabase *fmdb = [FMDatabase databaseWithPath:path];
         if ([fmdb open]) {
-            lcdb = AVFMDB.new;
+            lcdb = YQFMDB.new;
             lcdb.db = fmdb;
             lcdb.dbPath = path;
         }
@@ -87,14 +87,14 @@ static AVFMDB *lcdb = nil;
           primaryKeyDic:(NSDictionary * _Nullable)primaryKeyDic {
     BOOL result = NO;
     
-    NSDictionary *dic = [AVFMDBUtil storageTypeTodictionary:parameters];
+    NSDictionary *dic = [YQFMDBUtil storageTypeTodictionary:parameters];
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *propertyTypeDic = [NSMutableDictionary dictionaryWithDictionary:[userDefault dictionaryForKey:@"propertyTypeDic"]];
-    NSMutableDictionary *dbDic = [NSMutableDictionary dictionaryWithDictionary:[propertyTypeDic valueForKey:[AVFMDBUtil getFileName:_db.databasePath]]];
+    NSMutableDictionary *dbDic = [NSMutableDictionary dictionaryWithDictionary:[propertyTypeDic valueForKey:[YQFMDBUtil getFileName:_db.databasePath]]];
     [dbDic setObject:dic forKey:tableName];
     
-    [propertyTypeDic setValue:dbDic forKey:[AVFMDBUtil getFileName:_db.databasePath]];
+    [propertyTypeDic setValue:dbDic forKey:[YQFMDBUtil getFileName:_db.databasePath]];
     [userDefault setObject:propertyTypeDic forKey:@"propertyTypeDic"];
     [userDefault synchronize];
     
@@ -142,7 +142,7 @@ static AVFMDB *lcdb = nil;
     NSArray *columnArr = [self getColumnArr:tableName];
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *propertyTypeDic = [NSMutableDictionary dictionaryWithDictionary:[userDefault dictionaryForKey:@"propertyTypeDic"]];
-    NSDictionary *dbDic = [propertyTypeDic valueForKey:[AVFMDBUtil getFileName:_db.databasePath]][tableName];
+    NSDictionary *dbDic = [propertyTypeDic valueForKey:[YQFMDBUtil getFileName:_db.databasePath]][tableName];
     //多条数据
     if ([dataSource isKindOfClass:[NSArray class]]) {
         for (int i = 0; i < [dataSource count]; i++) {
@@ -162,7 +162,7 @@ static AVFMDB *lcdb = nil;
     NSArray *columnArr = [self getColumnArr:tableName];
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *propertyTypeDic = [NSMutableDictionary dictionaryWithDictionary:[userDefault dictionaryForKey:@"propertyTypeDic"]];
-    NSDictionary *dbDic = [propertyTypeDic valueForKey:[AVFMDBUtil getFileName:_db.databasePath]][tableName];
+    NSDictionary *dbDic = [propertyTypeDic valueForKey:[YQFMDBUtil getFileName:_db.databasePath]][tableName];
     return [self insertWithTable:tableName dataSource:parameters columnArr:columnArr propertyTypeDic:dbDic];;
 }
 
@@ -175,7 +175,7 @@ static AVFMDB *lcdb = nil;
     if ([dataSource isKindOfClass:[NSDictionary class]]) {
         dic = dataSource;
     } else {
-        dic = [AVFMDBUtil getModelPropertyKeyValue:dataSource clomnArr:columnArr];
+        dic = [YQFMDBUtil getModelPropertyKeyValue:dataSource clomnArr:columnArr];
     }
 
     NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"INSERT INTO %@ (",tableName];
@@ -249,12 +249,12 @@ static AVFMDB *lcdb = nil;
     if ([dataSource isKindOfClass:[NSDictionary class]]) {
         dic = dataSource;
     } else {
-        dic = [AVFMDBUtil getModelPropertyKeyValue:dataSource clomnArr:clomnArr];
+        dic = [YQFMDBUtil getModelPropertyKeyValue:dataSource clomnArr:clomnArr];
     }
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *propertyTypeDic = [NSMutableDictionary dictionaryWithDictionary:[userDefault dictionaryForKey:@"propertyTypeDic"]];
-    NSDictionary *dbDic = [propertyTypeDic valueForKey:[AVFMDBUtil getFileName:_db.databasePath]][tableName];
+    NSDictionary *dbDic = [propertyTypeDic valueForKey:[YQFMDBUtil getFileName:_db.databasePath]][tableName];
     
     NSMutableArray *argumentsArr = [NSMutableArray arrayWithCapacity:0];
     
@@ -309,10 +309,10 @@ static AVFMDB *lcdb = nil;
         clomnArr = dbDic.allKeys;
     }
     else {
-        CLS = [AVFMDBUtil getModelClass:parameters];
+        CLS = [YQFMDBUtil getModelClass:parameters];
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         NSMutableDictionary *propertyTypeDic = [NSMutableDictionary dictionaryWithDictionary:[userDefault dictionaryForKey:@"propertyTypeDic"]];
-        dbDic = [propertyTypeDic valueForKey:[AVFMDBUtil getFileName:_db.databasePath]][tableName];
+        dbDic = [propertyTypeDic valueForKey:[YQFMDBUtil getFileName:_db.databasePath]][tableName];
         clomnArr = [self getColumnArr:tableName];
     }
     if (CLS) {
