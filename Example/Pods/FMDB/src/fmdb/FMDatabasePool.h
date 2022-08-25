@@ -1,3 +1,11 @@
+//
+//  FMDatabasePool.h
+//  fmdb
+//
+//  Created by August Mueller on 6/22/11.
+//  Copyright 2011 Flying Meat Inc. All rights reserved.
+//
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN

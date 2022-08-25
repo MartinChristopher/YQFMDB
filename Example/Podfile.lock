@@ -1,15 +1,24 @@
 PODS:
-  - YQFMDB (0.0.2)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - YQFMDB (0.0.3):
+    - FMDB (= 2.7.5)
 
 DEPENDENCIES:
   - YQFMDB (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FMDB
 
 EXTERNAL SOURCES:
   YQFMDB:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YQFMDB: 7f95d66b918b32646d1579799c6d728b5ec54754
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  YQFMDB: 52218e6ffb50caed3dbac2ee4724e9721e9621e2
 
 PODFILE CHECKSUM: 73f55698b0bebe3a5bf93812487fd99b391038b3
 

@@ -1,6 +1,6 @@
 {
   "name": "YQFMDB",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "summary": "A short description of YQFMDB.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/MartinChristopher/YQFMDB",
@@ -13,10 +13,15 @@
   },
   "source": {
     "git": "https://github.com/MartinChristopher/YQFMDB.git",
-    "tag": "0.0.2"
+    "tag": "0.0.3"
   },
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": "YQFMDB/Classes/**/*"
+  "source_files": "YQFMDB/**/*.{h,m}",
+  "dependencies": {
+    "FMDB": [
+      "2.7.5"
+    ]
+  }
 }

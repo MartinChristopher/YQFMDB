@@ -10,12 +10,6 @@
 #endif
 #endif
 
-#import "FMDatabase.h"
-#import "FMDatabaseAdditions.h"
-#import "FMDatabasePool.h"
-#import "FMDatabaseQueue.h"
-#import "FMDB.h"
-#import "FMResultSet.h"
 #import "YQFMDB.h"
 #import "YQFMDBHeader.h"
 #import "YQFMDBUtil.h"

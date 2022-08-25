@@ -1,3 +1,11 @@
+//
+//  FMDatabaseAdditions.m
+//  fmdb
+//
+//  Created by August Mueller on 10/30/05.
+//  Copyright 2005 Flying Meat Inc.. All rights reserved.
+//
+
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
 #import "TargetConditionals.h"

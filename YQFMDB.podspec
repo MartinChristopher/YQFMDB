@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YQFMDB'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'A short description of YQFMDB.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
@@ -22,7 +22,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '11.0'
   s.platform              = :ios, "11.0"
 
-  s.source_files = 'YQFMDB/Classes/**/*'
+  s.source_files = 'YQFMDB/**/*.{h,m}'
   
   # s.resource_bundles = {
   #   'YQFMDB' => ['YQFMDB/Assets/*.png']
@@ -30,5 +30,5 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'FMDB', '2.7.5'
 end

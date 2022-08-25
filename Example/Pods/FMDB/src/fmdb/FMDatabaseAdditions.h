@@ -1,3 +1,11 @@
+//
+//  FMDatabaseAdditions.h
+//  fmdb
+//
+//  Created by August Mueller on 10/30/05.
+//  Copyright 2005 Flying Meat Inc.. All rights reserved.
+//
+
 #import <Foundation/Foundation.h>
 #import "FMDatabase.h"
 
